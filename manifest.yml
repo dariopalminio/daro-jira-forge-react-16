@@ -1,0 +1,15 @@
+modules:
+  jira:globalPage:
+    - key: jira-forge-react-16-app-hello-world-page
+      resource: main
+      resolver:
+        function: resolver
+      title: jira-forge-react-16-app
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/app/build
+app:
+  id: ari:cloud:ecosystem::app/97c7842c-d149-4998-b24e-587d81d877b7
