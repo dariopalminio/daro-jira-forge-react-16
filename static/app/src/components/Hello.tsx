@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
+
 interface IProps {
     children?: React.ReactNode;
 }
 
-
 const Hello: React.FC<IProps> = (props: IProps) => {
-
 
     return (
         <div>
