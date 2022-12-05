@@ -35,12 +35,24 @@ export default function useJiraHook() {
     };
 
 
+    const searchJql = async () => {
+        setState({ isProcessing: true, hasError: false, msg: '', isSuccess: false });
+        const jql: string = "project=TKP and issuetype = Epic order by created DESC";
+        try {
+            const data: any = await jiraApi.searchJql(jql);
+            return data;
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return {
         isProcessing: state.isProcessing,
         hasError: state.hasError,
         msg: state.msg,
         isSuccess: state.isSuccess,
         getIssueData,
-        getIssueDataByInvoke
+        getIssueDataByInvoke,
+        searchJql
     };
 };

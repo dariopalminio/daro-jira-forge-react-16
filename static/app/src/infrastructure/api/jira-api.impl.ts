@@ -28,8 +28,50 @@ export default function JiraApiImpl(): IJiraApi {
         }
     };
 
+
+    async function searchJql(jql: string) : Promise<any> {
+        try {
+            const body = {
+                "expand": [
+                    "names",
+                    "schema",
+                    "children",
+                    "descendants"
+                ],
+                "jql": jql,
+                "maxResults": 15,
+                "fieldsByKeys": false,
+                "fields": [
+                    "summary",
+                    "status",
+                    "assignee",
+                    "issuelinks",
+                    "duedate",
+                    "created",
+                    "customfield_10015"
+                ],
+                "startAt": 0
+            };
+            const response = await requestJira(`/rest/api/3/search`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(body)
+            });
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    };
+
+
     return {
         getIssueData,
-        getIssueDataByInvoke
+        getIssueDataByInvoke,
+        searchJql
     };
 };
