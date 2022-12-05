@@ -30,7 +30,7 @@ const Issue: React.FC = () => {
 
     return (
         <div>
-            <h2>This search the issue with id TKP-1 using forge/bridge</h2>
+            <h2>Test 2: This search the issue with id TKP-1 using forge/bridge</h2>
             <p>Response data.key: {apiData?.key}</p>
             <p>summary: {apiData?.fields?.summary}</p>
         </div>

@@ -22,7 +22,7 @@ const Hello: React.FC<IProps> = (props: IProps) => {
 
     return (
         <div>
-            <h1>Hello</h1>
+            <h2>Test 1: Hello</h2>
             {props.children}
             <p>Info: {data}</p>
         </div>

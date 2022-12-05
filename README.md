@@ -1,8 +1,11 @@
 # Custom UI Example
 
+Custom UI for more flexibility with developer-defined JavaScript, CSS, and HTML in a secured iframe hosted by Atlassian. In this case the stack is React 16 and Typescript.
+
 Reference: 
 https://developer.atlassian.com/platform/forge/custom-ui/
 https://atlaskit.atlassian.com/
+https://developer.atlassian.com/platform/marketplace/listing-forge-apps/
 
 
 # Forge Hello World
