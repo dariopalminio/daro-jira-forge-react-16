@@ -3,8 +3,7 @@
 //Interface to do dependency inversion
 export interface IStorageApi {
 
-    getConfigStorage: () => Promise<any>;
-    setConfigStorage: () => Promise<any>;
+    getConfigStorage: (key: string) => Promise<any>;
+    setConfigStorage: (key: string, data: any) => Promise<any>;
 
-    
   };        

@@ -12,9 +12,13 @@ function App() {
     return (
         <div>
            <Hello>I am Daro!</Hello>
+           <br/>
            <Issue />
+           <br/>
            <SearchJql />
+           <br/>
            <ConfigStore />
+           <br/>
            <InvokeIssue />
         </div>
     );

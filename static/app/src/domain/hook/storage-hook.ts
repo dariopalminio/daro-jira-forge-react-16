@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import StorageApiImpl from '../../infrastructure/storage/storage-api.impl';
+import { ConfigStorageData } from '../model/config-storage-data';
 import { IStorageApi } from '../outgoing/storage-api.interface';
 import { IHookState, InitialState } from './hook.type';
 
@@ -18,7 +19,7 @@ export default function useStorageHook() {
     const getConfigStorage = async () => {
         setState({ isProcessing: true, hasError: false, msg: '', isSuccess: false });
         try {
-            const data: any = await storageApi.getConfigStorage();
+            const data: any = await storageApi.getConfigStorage('CONFIG');
             return data;
         } catch (error) {
             console.error(error);
@@ -28,7 +29,10 @@ export default function useStorageHook() {
     const setConfigStorage = async () => {
         setState({ isProcessing: true, hasError: false, msg: '', isSuccess: false });
         try {
-            const data: any = await storageApi.setConfigStorage();
+            const configData: ConfigStorageData = {
+                date: (new Date).toString()
+            };
+            const data: any = await storageApi.setConfigStorage('CONFIG', configData);
             return data;
         } catch (error) {
             console.error(error);

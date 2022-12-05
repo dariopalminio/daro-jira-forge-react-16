@@ -4,6 +4,7 @@ import api, { route } from "@forge/api";
 
 const resolver = new Resolver();
 
+
 resolver.define('getIssueData', async ({ payload, context }) => {
     const issueKey = payload.issueKey;
     const response = await api
@@ -22,21 +23,20 @@ resolver.define('getText', (req) => {
 resolver.define('setConfigStorage', async ({ payload, context }) => {
 
     const configRecord = {
-        ...payload,
+        ...payload.data,
     };
 
     //Method signature: storage.set(key: string, value: array | boolean | number | object | string ): Promise<void>;
-    await storage.set('CONFIG', configRecord);
+    await storage.set(payload.key, configRecord);
 
     return configRecord;
 });
 
 //get from storage
-resolver.define('getConfigStorage', () => {
+resolver.define('getConfigStorage', async ({ payload, context }) => {
 
-    //storage.get(key: string): Promise<array | boolean | number | object | string>;
-
-    return storage.get('CONFIG');
+    //Method signature: storage.get(key: string): Promise<array | boolean | number | object | string>;
+    return await storage.get(payload.key);
 });
 
 export const handler = resolver.getDefinitions();
