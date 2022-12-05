@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { invoke } from '@forge/bridge';
+import useJiraHook from "../../domain/hook/jira-hook";
 
 const InvokeIssue: React.FC = () => {
-
+    const { getIssueDataByInvoke } = useJiraHook();
     const [apiData, setApiData] = useState<any>()
 
     useEffect(() => {
         const getData = async () => {
             try {
                 console.log('--->InvokeIssue');
-                const info: string = await invoke('getIssueData', { issueKey: 'TKP-1' });
+                const info: string = await getIssueDataByInvoke('TKP-1');
                 setApiData(info);
             } catch (error) {
                 console.log(error);

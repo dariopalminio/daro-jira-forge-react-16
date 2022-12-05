@@ -1,10 +1,11 @@
 import React from 'react';
-import Config from './Config';
+import ConfigStore from './component/config-store';
 //import styles from './App.module.css';
-import Hello from './Hello';
-import InvokeIssue from './InvokeIssue';
-import Issue from './Issue';
-import SearchJql from './search-jql';
+
+import SearchJql from './component/search-jql';
+import InvokeIssue from './component/invoke-issue';
+import Hello from './component/hello';
+import Issue from './component/issue';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
            <Hello>I am Daro!</Hello>
            <Issue />
            <SearchJql />
-           <Config />
+           <ConfigStore />
            <InvokeIssue />
         </div>
     );

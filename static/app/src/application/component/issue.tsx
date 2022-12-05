@@ -1,26 +1,16 @@
 import { useEffect, useState } from "react";
-import { requestJira } from '@forge/bridge';
+import useJiraHook from "../../domain/hook/jira-hook";
 
 
 const Issue: React.FC = () => {
 
     const [apiData, setApiData] = useState<any>()
-    const [status, setStatus] = useState('')
-
-
-    const fetchData = async (key: string) => {
-        console.log('**************');
-        const response = await requestJira(`/rest/api/3/issue/${key}`);
-        const data = await response.json();
-        console.log('data:', data);
-        console.log('sytatus:', response.status);
-        return data;
-    };
+    const { getIssueData } = useJiraHook();
 
     useEffect(() => {
         const getDatas = async () => {
             try {
-                setApiData(await fetchData('TKP-1'));
+                setApiData(await getIssueData('TKP-1'));
             } catch (error) {
                 console.log(error);
             }

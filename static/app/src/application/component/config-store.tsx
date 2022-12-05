@@ -3,7 +3,7 @@ import { invoke } from '@forge/bridge';
 
 
 
-const Config: React.FC = () => {
+const ConfigStore: React.FC = () => {
     const [configData, setConfigData] = useState(null);
 
     useEffect(() => {
@@ -38,4 +38,4 @@ const Config: React.FC = () => {
     );
 };
 
-export default Config;
+export default ConfigStore;
