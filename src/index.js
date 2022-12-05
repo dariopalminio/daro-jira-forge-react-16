@@ -2,6 +2,11 @@ import Resolver from '@forge/resolver';
 import { storage } from '@forge/api';
 import api, { route } from "@forge/api";
 
+/**
+ * The custom UI resolver enables you to define backend functions for your custom UI apps. 
+ * Your backend functions must be defined in this file of your Forge app. You must then refer to your resolver in the manifest.
+ * Invoke your resolver functions in your front-end infrastructure assets using the invoke custom UI bridge method.
+ */
 const resolver = new Resolver();
 
 

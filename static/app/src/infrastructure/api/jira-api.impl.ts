@@ -2,6 +2,13 @@ import { requestJira } from '@forge/bridge';
 import { invoke } from '@forge/bridge';
 import { IJiraApi } from '../../domain/outgoing/jira-api.interface';
 
+/**
+ * Jira API
+ * 
+ * The Jira API uses REST API and enables you to interact with Jira programmatically.  
+ * This Calls to back-end resolver using invoke and the back-end call to Jira REST API with asUser or asApp.
+ * Other strategy is to use requestJira, it communicates directly with jira without going through the Back-end.
+ */
 export default function JiraApiImpl(): IJiraApi {
 
 
