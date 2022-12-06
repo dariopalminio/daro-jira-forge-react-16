@@ -7,6 +7,11 @@ https://developer.atlassian.com/platform/forge/custom-ui/
 https://atlaskit.atlassian.com/
 https://developer.atlassian.com/platform/marketplace/listing-forge-apps/
 
+# Architecture
+
+![Forge-App-General-Architectura.png](doc/img/Forge-App-General-Architectura.png)
+
+![Forge-App-CustomUI-Architecture.png](doc/img/Forge-App-CustomUI-Architecture.png)
 
 # Forge Hello World
 
