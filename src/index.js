@@ -19,6 +19,14 @@ resolver.define('getIssueData', async ({ payload, context }) => {
     return issueData;
 });
 
+resolver.define('getCurrentUser', async ({ payload, context }) => {
+    const response = await api
+        .asUser()
+        .requestJira(route`/rest/api/3/myself?expand=groups,applicationRoles`);
+    const issueData = await response.json();
+    return issueData;
+});
+
 resolver.define('getText', (req) => {
     console.log(req);
     return 'The invoke bridge method enables custom UI apps to run backend FaaS functions hosted by Atlassian.';

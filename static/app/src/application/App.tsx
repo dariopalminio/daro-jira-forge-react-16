@@ -11,7 +11,7 @@ function App() {
 
     return (
         <div className={styles.app}>
-           <Hello>I am Daro!</Hello>
+           <Hello>This case tests the search for the current user, which is you, and display your name.</Hello>
            <br/>
            <Issue />
            <br/>

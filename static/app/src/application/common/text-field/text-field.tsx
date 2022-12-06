@@ -3,7 +3,6 @@ import styles from './text-field.module.css';
 
 interface IMyProps {
     id: string;
-    label: string;
     placeholder?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
     value: string;
@@ -33,8 +32,6 @@ export const TextField: React.FC<IMyProps> = (props: IMyProps) => {
     return (
  
             <div className={getClassName()}>
-                <label className={styles.labelTextField}>{ props.label}</label>
-
                 {! props.multiline && (
                     <input className={styles.inputTextField} id={ props.id} name={ props.id}
                         type={getType()}

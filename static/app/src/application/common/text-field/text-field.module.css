@@ -1,13 +1,8 @@
 .inputTextFieldGroup {
     color: black;
-    font-size: 13px;
+    font-size: 12px;
     margin: 0px;
     display: block;
-}
-
-.labelTextField {
-    display: block;
-    margin-bottom: 2px;
 }
 
 .inputTextField {
@@ -19,8 +14,8 @@
 .inputTextField[type=text] {
     background: #fff;
     float: left;
-    font-size: 13px;
-    height: 33px;
+    font-size: 12px;
+    height: 25px;
     margin: 0;
     padding: 0;
 }
@@ -28,8 +23,8 @@
 .inputTextField[type=password] {
     background: rgb(245, 245, 245);
     float: left;
-    font-size: 13px;
-    height: 33px;
+    font-size: 12px;
+    height: 25px;
     margin: 0;
     padding: 0;
 }

@@ -26,7 +26,6 @@ export default function JiraApiImpl(): IJiraApi {
 
     async function getIssueDataByInvoke(key: string): Promise<any> {
         try {
-            console.log('--->InvokeIssue');
             const data: any = await invoke('getIssueData', { issueKey: 'TKP-1' });
             return data;
         } catch (error) {
@@ -35,6 +34,14 @@ export default function JiraApiImpl(): IJiraApi {
         }
     };
 
+    async function getCurrentUser(): Promise<any> {
+        try {
+            const data: any = await invoke('getCurrentUser',);
+            return data;
+        } catch (error) {
+            throw error;
+        }
+    };
 
     async function searchJql(jql: string) : Promise<any> {
         try {
@@ -79,6 +86,7 @@ export default function JiraApiImpl(): IJiraApi {
     return {
         getIssueData,
         getIssueDataByInvoke,
-        searchJql
+        searchJql,
+        getCurrentUser
     };
 };

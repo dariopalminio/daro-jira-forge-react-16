@@ -46,14 +46,13 @@ const SearchJql: React.FC = () => {
                 <div style={{ float: 'left', width: '80%', alignItems: 'center' }}>
                     <TextField
                         id="standard-basic-1"
-                        label={'JQL'}
                         placeholder="Here text..."
                         onChange={(e) => handleChange(e.target.value)}
                         value={value}
                         {...(!isValid && { error: true, helperText: 'input error' })}
                     />
                 </div>
-                <div style={{ marginLeft: '10px', marginTop: '20px'}}>
+                <div style={{ marginLeft: '10px', marginTop: '0px'}}>
                     <Button onClick={() => handleOnClick()} style={{ float: 'right' }}>Search</Button>
                 </div>
             </div>
