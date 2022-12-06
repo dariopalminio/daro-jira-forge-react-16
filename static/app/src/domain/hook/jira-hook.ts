@@ -35,9 +35,9 @@ export default function useJiraHook() {
     };
 
 
-    const searchJql = async () => {
+    const searchJql = async (jql: string) => {
         setState({ isProcessing: true, hasError: false, msg: '', isSuccess: false });
-        const jql: string = "project=TKP and issuetype = Epic order by created DESC";
+        //const jql: string = "project=TKP and issuetype = Epic order by created DESC";
         try {
             const data: any = await jiraApi.searchJql(jql);
             return data;

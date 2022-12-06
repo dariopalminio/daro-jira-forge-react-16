@@ -1,6 +1,6 @@
 import React from 'react';
 import ConfigStore from './component/config-store';
-//import styles from './App.module.css';
+import styles from './App.module.css';
 
 import SearchJql from './component/search-jql';
 import InvokeIssue from './component/invoke-issue';
@@ -10,7 +10,7 @@ import Issue from './component/issue';
 function App() {
 
     return (
-        <div>
+        <div className={styles.app}>
            <Hello>I am Daro!</Hello>
            <br/>
            <Issue />
