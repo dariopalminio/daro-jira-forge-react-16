@@ -7,17 +7,17 @@ https://developer.atlassian.com/platform/forge/custom-ui/
 https://atlaskit.atlassian.com/
 https://developer.atlassian.com/platform/marketplace/listing-forge-apps/
 
+See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
+
 # Architecture
+
+Forge makes it possible to build a fully-functional app, with hosting, multiple development environments, and API authentication built-in. Forge can be used to build custom apps and integrations or apps distributed through the Atlassian Marketplace. With the built-in Storage API, Jira API, FaaS and triggers, one can operate apps with virtually no owned infrastructure – which also makes the entire operation model not only incredibly cheap but also much more secure.
 
 ![Forge-App-General-Architectura.png](doc/img/Forge-App-General-Architectura.png)
 
+
 ![Forge-App-CustomUI-Architecture.png](doc/img/Forge-App-CustomUI-Architecture.png)
 
-# Forge Hello World
-
-This project contains a Forge app written in JavaScript that displays `Hello World!` in a Jira global page.
-
-See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
 
 ## Requirements
 
