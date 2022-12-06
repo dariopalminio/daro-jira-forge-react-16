@@ -1,5 +1,7 @@
 # Custom UI Example
 
+
+This is a Jira Forge sample application (Custom UI) that can be used as a base to start a new project.
 Custom UI for more flexibility with developer-defined JavaScript, CSS, and HTML in a secured iframe hosted by Atlassian. In this case the stack is React 16 and Typescript.
 
 Reference: 

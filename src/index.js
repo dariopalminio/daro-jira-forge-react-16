@@ -15,8 +15,13 @@ resolver.define('getIssueData', async ({ payload, context }) => {
     const response = await api
         .asUser()
         .requestJira(route`/rest/api/3/issue/${issueKey}`);
+        
     const issueData = await response.json();
-    return issueData;
+    const rep = {
+        status: response.status,
+        data: issueData
+    }
+    return rep;
 });
 
 resolver.define('getCurrentUser', async ({ payload, context }) => {

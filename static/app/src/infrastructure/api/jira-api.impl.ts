@@ -26,10 +26,14 @@ export default function JiraApiImpl(): IJiraApi {
 
     async function getIssueDataByInvoke(key: string): Promise<any> {
         try {
-            const data: any = await invoke('getIssueData', { issueKey: 'TKP-1' });
-            return data;
+            const response: any = await invoke('getIssueData', { issueKey: 'TKP-1' });
+            const issueData = response.data;
+            if (response.status !== 200){
+                throw new Error(response?.data?.errorMessages[0]);
+            }
+            return issueData;
         } catch (error) {
-            console.error(error);
+            console.error('getIssueDataByInvoke ERROR:', error);
             throw error;
         }
     };
