@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useStorageHook from "../../domain/hook/storage-hook";
 
 
@@ -6,7 +7,7 @@ const ConfigStore: React.FC = () => {
     const [configData, setConfigData] = useState(null);
     const { getConfigStorage,
         setConfigStorage } = useStorageHook();
-
+    const { t } = useTranslation();
 
     useEffect(() => {
         const getData = async () => {
@@ -34,7 +35,7 @@ const ConfigStore: React.FC = () => {
 
     return (
         <div>
-            <h2>Test 4: Config Data</h2>
+            <h2>{t('test')} 4: Config Data</h2>
             <p>data: {configData !== null ? JSON.stringify(configData) : 'null'}</p>
         </div>
     );

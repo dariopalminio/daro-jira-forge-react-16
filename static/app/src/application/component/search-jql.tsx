@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useJiraHook from "../../domain/hook/jira-hook";
 import Button from "../common/button/button";
 import TextField from "../common/text-field/text-field";
@@ -10,7 +11,8 @@ const SearchJql: React.FC = () => {
     const [total, setTotal] = useState('none');
     const [value, setValue] = useState<string>(jqlDefault);
     const [isValid, setIsValid] = useState<boolean>(true);
-
+    const { t } = useTranslation();
+    
     const getDatas = async () => {
         try {
             const data = await searchJql(value);
@@ -40,7 +42,7 @@ const SearchJql: React.FC = () => {
 
     return (
         <div>
-            <h2>Test 3: This search using requestJira with POST and JQL</h2>
+            <h2>{t('test')} 3: This search using requestJira with POST and JQL</h2>
 
             <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
                 <div style={{ float: 'left', width: '80%', alignItems: 'center' }}>

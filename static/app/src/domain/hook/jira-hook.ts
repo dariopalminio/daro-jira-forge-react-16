@@ -14,12 +14,12 @@ export default function useJiraHook() {
     const [state, setState] = useState<IHookState>(InitialState);
     const jiraApi: IJiraApi = JiraApiImpl();
 
-    const getCurrentUsername = async (): Promise<string | undefined> => {
+    const getCurrentUser = async (): Promise<any> => {
         setState({ isProcessing: true, hasError: false, msg: '', isSuccess: false });
         try {
             const currentUserData: any = await jiraApi.getCurrentUser();
-            const name: string = currentUserData?.displayName;
-            return name;
+            //const name: string = currentUserData?.displayName;
+            return currentUserData;
         } catch (error) {
             console.error(error);
         }
@@ -62,7 +62,7 @@ export default function useJiraHook() {
         hasError: state.hasError,
         msg: state.msg,
         isSuccess: state.isSuccess,
-        getCurrentUsername,
+        getCurrentUser,
         getIssueData,
         getIssueDataByInvoke,
         searchJql
